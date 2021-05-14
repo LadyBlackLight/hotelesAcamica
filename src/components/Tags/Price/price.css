@@ -1,0 +1,11 @@
+.price{
+    width: 19%;
+    background: #D938CB !important;
+    font-weight: 700;
+}
+.active{
+    color: white;
+}
+.sign{
+    color: rgba(255, 255, 255, .5);
+}
