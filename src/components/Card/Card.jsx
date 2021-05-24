@@ -17,9 +17,9 @@ export default function Card(props) {
                         </div>
                     </div>
                 </div>
-                <div className="card-body">
-                    <h5 className="card-title">{props.name}</h5>
-                    <p className="card-text">{props.description}</p>
+                <div className="card-body min-height-card">
+                    <h6 className="card-title"><strong>{props.name}</strong></h6>
+                    <p className="card-text min-height-description">{props.description}</p>
                     <Location
                         city={props.city}
                         country={props.country}

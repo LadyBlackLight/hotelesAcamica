@@ -1,49 +1,27 @@
 import React from 'react';
 import './filtros.css';
 import Pais from './Pais/Pais.jsx';
+import Precio from './Precio/Precio.jsx'
+import Tamanio from './Tamanio/Tamanio.jsx'
+import Reset from './Reset/Reset.jsx'
+import Fecha from './Fecha/Fecha.jsx';
 
 export default function Filtros(props) {
     return (
         <div className="bg-filtros">
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row">
-                    <div className="col-12 col-md-6 col-lg d-flex flex-wrap align-items-start justify-content-center flex-column">
-                        <label htmlFor="availabilityFrom">Llegada</label>
-                        <input type="date" name="availabilityFrom" id="llegada" />
-                    </div>
-                    <div className="col-12 col-md-6 col-lg d-flex flex-wrap align-items-start justify-content-center flex-column">
-                        <label htmlFor="availabilityFrom">Salida</label>
-                        <input type="date" name="availabilityTo" id="salida" />
-                    </div>
-                    <div className="col-12 col-md-6 col-lg d-flex flex-wrap align-items-start justify-content-center flex-column">
-                        <Pais
+                    <Fecha handleLlegada={props.handleLlegada} llegada={props.llegada} handleSalida={props.handleSalida} salida={props.salida}/>
+                    <Pais
                         key={props.id}
-                        country={props.country}
-                        />
+                        filtrado={props.filtrado}
+                        handlePaises={props.handlePaises}
+                        pais={props.pais}
+                    />
+                    <Precio handlePrecio={props.handlePrecio} precio={props.precio}/>
+                    <Tamanio handleTamanio={props.handleTamanio} tamanio={props.tamanio}/>
+                    <Reset handleReset={props.handleReset} reset={props.reset}/>
                     </div>
-                    <div className="col-12 col-md-6 col-lg d-flex flex-wrap align-items-start justify-content-center flex-column">
-                        <label htmlFor="price">Precio</label>
-                        <select name="price" id="precio">
-                            <option selected disabled>
-                                Selecciona un precio
-                        </option>
-                            <option value="$">$</option>
-                            <option value="$$">$$</option>
-                            <option value="$$$">$$$</option>
-                            <option value="$$$$">$$$$</option>
-                        </select>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg d-flex flex-wrap align-items-start justify-content-center flex-column">
-                        <label htmlFor="size">Tamaño</label>
-                        <select name="size" id="tamano">
-                            <option selected disabled>
-                                Selecciona un tamaño
-                        </option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select>
-                    </div>
-                </div>
             </div>
         </div>
     )

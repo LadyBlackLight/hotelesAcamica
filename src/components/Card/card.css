@@ -25,3 +25,16 @@
     font-weight: 700;
     padding: 10px;
   }
+  .card-footer-c:hover{
+    background: #d889d1;
+  }
+  .min-height-card{
+    height: 410px !important;
+  }
+  .min-height-description{
+    height: 240px !important;
+  }
+  a:hover, a p:hover{
+    text-decoration: none !important;
+    color: white !important;
+  }
